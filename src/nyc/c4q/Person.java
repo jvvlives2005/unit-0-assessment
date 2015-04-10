@@ -2,7 +2,7 @@ package nyc.c4q;
 
 public class Person {
     private String name;
-    private String phoneNumber;
+    private long phoneNumber;                             //changed from string to long since the phone number should give integers
     private String city;
 
     public Person() {
@@ -20,12 +20,13 @@ public class Person {
         this.city = city;
     }
 
-    public String getPhoneNumber() {
+    public long getPhoneNumber() {                      //changed from string to long since the phone number should give integers
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public long setPhoneNumber(long phoneNumber) {     //changed from string to long since the phone number should give integers
         this.phoneNumber = phoneNumber;
+        return phoneNumber;
     }
 
     public String getName() {

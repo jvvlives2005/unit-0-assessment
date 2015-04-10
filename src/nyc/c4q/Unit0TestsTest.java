@@ -81,6 +81,7 @@ public class Unit0TestsTest {
     public void testPrintSumOf1Upto10UsingForLoop() throws Exception {
         Unit0Tests.printSumOf1Upto10UsingForLoop();
         assertEquals("45\n", outContent.toString());
+
     }
 
     @Test

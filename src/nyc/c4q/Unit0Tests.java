@@ -3,6 +3,7 @@ package nyc.c4q;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 public class Unit0Tests {
 
@@ -14,32 +15,51 @@ public class Unit0Tests {
     public static void main (String args[]) {
       // Use main to test your methods
       printHelloWorld();
+
     }
 
     public static void printHelloWorld() {
-      System.out.println("");
+      System.out.println("Hello World");                                        //add "Hello World"
     }
 
-    public static Object returnPrimitiveBooleanTrue() {
-      return null;
+    public static boolean returnPrimitiveBooleanTrue() {
+      return true;                                                              //since the method ask for true, I returned a true
     }
 
-    public static Object returnPrimitiveInt1729() {
-      return null;
+    public static int returnPrimitiveInt1729() {
+        int primitiveInt = 1729;                                                //since the method ask for the int 1729, I gave/declare the number 1729
+      return primitiveInt;                                                      //and returned the int (unless you want the wrapper Integer?) or return 1729
     }
 
-    public static Object returnPrimitiveDoubleThreePointOneFour() {
-      return null;
+    public static double returnPrimitiveDoubleThreePointOneFour() {
+        double primitiveDoubleThreePointOneFour = 3.14;                         //declare a double
+      return primitiveDoubleThreePointOneFour;                                  //returned a double (or return 3.14)
     }
 
-    public static Object returnPrimitiveCharZ() {
-        return false;
+    public static char returnPrimitiveCharZ() {
+        //char primitiveChar = 'z';                                            //you can declare it and then return the variable. Either way is fine
+        return 'z';
     }
 
     public static void printSumOf1Upto10UsingForLoop() {
+        int sum = 0;
+        for(int i = 1; i >= 10; i=i++){
+            System.out.println(i + " ");
+            sum = sum + i;
+        }
+
+        System.out.println(sum);                                               //should've worked, but there's something wrong
     }
 
     public static void printSumOf1Upto10000UsingForLoop() {
+        int sum = 0;
+        for(int i = 1; i >= 10000; i=i++){
+            System.out.println(i + " ");
+            sum = sum + i;
+        }
+
+        System.out.println(sum);
+
     }
 
     public static boolean isOdd(int n) {
@@ -54,7 +74,7 @@ public class Unit0Tests {
       return false;
     }
 
-    public static String repeatStringXTimes(String input, int times) {
+    public static String repeatStringXTimes(String input, int times) {                     // do not know
         // Given string "input" and a positive integer "times",
         // return a string that is equal to the input string repeated X times.
         // If "times" is 0 negative, return a blank string.
@@ -66,14 +86,21 @@ public class Unit0Tests {
         // Given string "input", return a string that stops at the first occurrence of the character 'q'.
         // For example, given the string "ubiquitous", return "ubi".
         // If the string does not contain a q, then return the empty string "".
-        return "";
+
+        Scanner keyboard = new Scanner(System.in);
+        //Has to do with some if statement like
+//        if(char i = 'q'){
+//            //then print at the first occurance
+//        }
+//
+//        return "";
     }
 
-    public static Person declareAndReturnPersonNamedAda() {
+    public static Person declareAndReturnPersonNamedAda() {              //forgot how to add it
       return null;
     }
 
-    public static Person declareAndReturnPersonNamedAlanTuringFromLondon() {
+    public static Person declareAndReturnPersonNamedAlanTuringFromLondon() {   //should london be place in the place.java?
       return null;
     }
 
@@ -81,11 +108,13 @@ public class Unit0Tests {
       return false;
     }
 
-    public static ArrayList<Place> declareAndReturnArrayListOfThreePlaces() {
-        return null;
+    public static ArrayList<Place> declareAndReturnArrayListOfThreePlaces() {     //all i got
+        ArrayList<Place> threePlaces = new ArrayList<Place>();
+
+        return threePlaces;
     }
 
-    public static HashMap<String, Person> declareAndReturnHashmapOfAlanTuringAndGraceHopper() {
+    public static HashMap<String, Person> declareAndReturnHashmapOfAlanTuringAndGraceHopper() {     //forgot
       // The HashMap should have key-value pairs of:
       // - key: `Alan Turing`, value: instance of Person with name `Alan Turing`
       // - key: `Grace Hopper`, value: instance of Person with name `Grace Hopper`
@@ -95,12 +124,17 @@ public class Unit0Tests {
     public static void changeTuringsCityToPrinceton(HashMap<String, Person> people) {
     }
 
+    HashMap<String, Person> people = new HashMap<String, Person>();
+    //that all I got
+
     // Bonus Problems
-    public static void bonusPrintOutSumOfFirstTenFibonacciNumbers() {
+    public static void bonusPrintOutSumOfFirstTenFibonacciNumbers()
+    {
 
     }
 
-    public static void bonusPrintOutSumOfFirstFortyFibonacciNumbers() {
+    public static void bonusPrintOutSumOfFirstFortyFibonacciNumbers()
+    {
 
     }
 }
