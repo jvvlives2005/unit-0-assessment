@@ -19,51 +19,54 @@ public class Unit0Tests {
     }
 
     public static void printHelloWorld() {
-      System.out.println("Hello World");                                        //add "Hello World"
+      System.out.println("Hello World");                                 //add "Hello World"
     }
 
     public static boolean returnPrimitiveBooleanTrue() {
-      return true;                                                              //since the method ask for true, I returned a true
+      return true;                                                       //since the method ask for true, I returned a true
     }
 
     public static int returnPrimitiveInt1729() {
-        int primitiveInt = 1729;                                                //since the method ask for the int 1729, I gave/declare the number 1729
-      return primitiveInt;                                                      //and returned the int (unless you want the wrapper Integer?) or return 1729
+        int primitiveInt = 1729;                                        //since the method ask for the int 1729, I gave/declare the number 1729
+      return primitiveInt;                                              //and returned the int (unless you want the wrapper Integer?) or return 1729
     }
 
     public static double returnPrimitiveDoubleThreePointOneFour() {
-        double primitiveDoubleThreePointOneFour = 3.14;                         //declare a double
-      return primitiveDoubleThreePointOneFour;                                  //returned a double (or return 3.14)
+        double primitiveDoubleThreePointOneFour = 3.14;                 //declare a double
+      return primitiveDoubleThreePointOneFour;                          //returned a double (or return 3.14)
     }
 
     public static char returnPrimitiveCharZ() {
-        //char primitiveChar = 'z';                                            //you can declare it and then return the variable. Either way is fine
-        return 'z';
+        char primitiveChar = 'Z';                                       //you can declare it and then return the variable. Either way is fine
+        return primitiveChar;
     }
 
     public static void printSumOf1Upto10UsingForLoop() {
         int sum = 0;
-        for(int i = 1; i >= 10; i=i++){
-            System.out.println(i + " ");
-            sum = sum + i;
-        }
+        for(int i = 1; i < 10; i++){                                    //when you do i < a; a will not be counted because once a=a, the loop will break
+            sum += i;                                                   //sum = i++ (this will add the numbers as it goes to the loop)
 
-        System.out.println(sum);                                               //should've worked, but there's something wrong
+        }
+        System.out.println(sum);                                        //Make sure to use System.out.print outside of the for loop to print the number only
+
     }
 
-    public static void printSumOf1Upto10000UsingForLoop() {
+    public static void printSumOf1Upto10000UsingForLoop() {             //Same as the one above it
         int sum = 0;
-        for(int i = 1; i >= 10000; i=i++){
-            System.out.println(i + " ");
-            sum = sum + i;
+        for(int i = 1; i < 10000;i++){
+            sum += i;
+
         }
-
         System.out.println(sum);
-
     }
 
     public static boolean isOdd(int n) {
-      return false;
+        int num = 0;
+        int i = num/2;
+        if( == i){
+        }
+
+        return false;
     }
 
     public static boolean isMultipleOfThree(int n) {
@@ -93,7 +96,7 @@ public class Unit0Tests {
 //            //then print at the first occurance
 //        }
 //
-//        return "";
+        return "";
     }
 
     public static Person declareAndReturnPersonNamedAda() {              //forgot how to add it
