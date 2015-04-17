@@ -1,5 +1,7 @@
 package nyc.c4q;
 
+import com.sun.xml.internal.ws.util.StringUtils;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,6 +17,13 @@ public class Unit0Tests {
     public static void main (String args[]) {
       // Use main to test your methods
       printHelloWorld();
+        System.out.println(returnPrimitiveBooleanTrue());
+//        isOdd(6);       //you can put this instead of System.out.println(isOdd(6)) ONLY if you put it sout in the method.
+//        isOdd(7);
+//        isMultipleOfThree(6);
+//        isMultipleOfThree(8);
+        isOddAndIsMultipleOfThree(13);
+        isOddAndIsMultipleOfThree(15);
 
     }
 
@@ -60,21 +69,44 @@ public class Unit0Tests {
         System.out.println(sum);
     }
 
-    public static boolean isOdd(int n) {
-        int num = 0;
-        int i = num/2;
-        if( == i){
-        }
+    public static boolean isOdd(int n)
+    {
+        int i = 0;                                                     //have it start to 0
+        boolean odd = false;                                           //have the boolean odd be false
 
-        return false;
+        while (i != n) {                                               //while the number is not 0
+            odd = !odd;                                                //have the number be true
+            i = i + 1;                                                 //then continue going on by adding 1
+        }
+        System.out.println(odd);                                       //print if it's true or false
+        return odd;                                                    //also return it
     }
 
     public static boolean isMultipleOfThree(int n) {
-      return false;
+        int i = 0;                                                     //initialize the variable i
+        boolean multipleOfThree = false;                               //have it false
+
+        while(i == n % 3) {                                            //while the number is equal to the multiple of 3
+            multipleOfThree =!multipleOfThree;                         //have it be true
+            i = i + 1;
+        }
+
+        System.out.println(multipleOfThree);
+
+      return multipleOfThree;                                          //without printing, you can just return n % 3 == 0;
     }
 
-    public static boolean isOddAndIsMultipleOfThree(int n) {
-      return false;
+    public static boolean isOddAndIsMultipleOfThree(int n) {            // Talk with AQ
+        int i = 0;
+        boolean isOddAndIsMultipleOfThree = false;
+        while ((i != n) && (i == n % 3))
+        {
+            isOddAndIsMultipleOfThree =! isOddAndIsMultipleOfThree;
+            i = i + 1;
+        }
+        System.out.println(isOddAndIsMultipleOfThree);
+
+      return isOddAndIsMultipleOfThree;
     }
 
     public static String repeatStringXTimes(String input, int times) {                     // do not know
@@ -82,6 +114,8 @@ public class Unit0Tests {
         // return a string that is equal to the input string repeated X times.
         // If "times" is 0 negative, return a blank string.
         // For example, repeatStringXTimes("potato", 5) should return "potatopotatopotatopotatopotato".
+      
+
         return "";
     }
 
