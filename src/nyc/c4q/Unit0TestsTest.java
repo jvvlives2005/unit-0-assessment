@@ -191,10 +191,10 @@ public class Unit0TestsTest {
         assertEquals(HashMap.class, people.getClass());
         Person turing = Unit0Tests.declareAndReturnHashmapOfAlanTuringAndGraceHopper().get("Alan Turing");
         Person hopper = Unit0Tests.declareAndReturnHashmapOfAlanTuringAndGraceHopper().get("Grace Hopper");
-        assertEquals(Person.class, turing.getClass());
-        assertEquals(Person.class, hopper.getClass());
         assertEquals("Alan Turing", turing.getName());
         assertEquals("Grace Hopper", hopper.getName());
+        assertEquals(Person.class, turing.getClass());
+        assertEquals(Person.class, hopper.getClass());
         assertEquals("London", turing.getCity());
         assertEquals("Arlington", hopper.getCity());
     }

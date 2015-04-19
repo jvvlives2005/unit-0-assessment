@@ -16,14 +16,16 @@ public class Unit0Tests {
      */
     public static void main (String args[]) {
       // Use main to test your methods
-      printHelloWorld();
-        System.out.println(returnPrimitiveBooleanTrue());
+     // printHelloWorld();
+        //System.out.println(returnPrimitiveBooleanTrue());
 //        isOdd(6);       //you can put this instead of System.out.println(isOdd(6)) ONLY if you put it sout in the method.
 //        isOdd(7);
 //        isMultipleOfThree(6);
 //        isMultipleOfThree(8);
-        isOddAndIsMultipleOfThree(13);
-        isOddAndIsMultipleOfThree(15);
+        //isOddAndIsMultipleOfThree(13);
+        //isOddAndIsMultipleOfThree(15);
+        //System.out.println(repeatStringXTimes("potato", 5));
+        System.out.println(returnStringUntilQ("ubiq"));
 
     }
 
@@ -79,7 +81,7 @@ public class Unit0Tests {
             i = i + 1;                                                 //then continue going on by adding 1
         }
         System.out.println(odd);                                       //print if it's true or false
-        return odd;                                                    //also return it
+        return odd;                                                    //also return it    (can also be n % 2 != 0)
     }
 
     public static boolean isMultipleOfThree(int n) {
@@ -97,16 +99,17 @@ public class Unit0Tests {
     }
 
     public static boolean isOddAndIsMultipleOfThree(int n) {            // Talk with AQ
-        int i = 0;
-        boolean isOddAndIsMultipleOfThree = false;
-        while ((i != n) && (i == n % 3))
-        {
-            isOddAndIsMultipleOfThree =! isOddAndIsMultipleOfThree;
-            i = i + 1;
-        }
-        System.out.println(isOddAndIsMultipleOfThree);
+//        int i = 0;
+//        boolean isOddAndIsMultipleOfThree = false;
+//        while ((i != n) && (i == n % 3))
+//        {
+//            isOddAndIsMultipleOfThree =! isOddAndIsMultipleOfThree;
+//            i = i + 1;
+//        }
+//        System.out.println(isOddAndIsMultipleOfThree);
+//        return isOddAndIsMultipleOfThree;
 
-      return isOddAndIsMultipleOfThree;
+      return isOdd(n) && isMultipleOfThree(n);
     }
 
     public static String repeatStringXTimes(String input, int times) {                     // do not know
@@ -114,9 +117,16 @@ public class Unit0Tests {
         // return a string that is equal to the input string repeated X times.
         // If "times" is 0 negative, return a blank string.
         // For example, repeatStringXTimes("potato", 5) should return "potatopotatopotatopotatopotato".
-      
 
-        return "";
+            String repeatStringXTimes = ("");                          //Declare the variable
+
+            for (int i = 1; i <=times; i++)                            //This calculates how many times the string should repeat
+            {
+                repeatStringXTimes += input;                           //if i is less or the equal to the i, then have
+                                                                       //the repetition occur with the word
+            }
+
+        return repeatStringXTimes;                                     //give the new string with the repetitions
     }
 
     public static String returnStringUntilQ(String input) {
@@ -124,29 +134,62 @@ public class Unit0Tests {
         // For example, given the string "ubiquitous", return "ubi".
         // If the string does not contain a q, then return the empty string "".
 
-        Scanner keyboard = new Scanner(System.in);
-        //Has to do with some if statement like
-//        if(char i = 'q'){
-//            //then print at the first occurance
-//        }
-//
-        return "";
+//First, you check if the input string doesn't have a q
+        if (!(input.contains("q"))){
+            return "";
+        }
+
+        //return a new string if the input does have a q; so it prints before the q
+        String string1 = "";
+        for(int i = 0; i < input.length(); i++){
+            if (input.charAt(i) == 'q') {
+                break;                                                //string1= string1 + input.charAt(i) (this is concatinating)
+            }
+            else
+                string1 += input.charAt(i);
+        }
+
+        return string1;
     }
 
     public static Person declareAndReturnPersonNamedAda() {              //forgot how to add it
-      return null;
+    // Declare Ada using Person and create "new" Person
+        Person ada =  new Person("Ada");
+    //Make sure you put something inside the parenthese, if you did
+    // Person Ada = new Person (), then you told Java that there's nothing
+      return ada;
     }
 
     public static Person declareAndReturnPersonNamedAlanTuringFromLondon() {   //should london be place in the place.java?
-      return null;
+      //Person alan = new Person("Alan Turning From London");
+
+      //Declare the person
+        Person p = new Person("Alan Turing");
+
+        //add London to p
+        p.setCity("London");
+
+        return p ;
     }
 
-    public static boolean isFromLondon(Person person) {
+    public static boolean isFromLondon(Person person) {                        //disregard the score
+
       return false;
     }
 
     public static ArrayList<Place> declareAndReturnArrayListOfThreePlaces() {     //all i got
+        //create the ArrayList
         ArrayList<Place> threePlaces = new ArrayList<Place>();
+
+        //Declare the places
+        Place place1 = new Place("New York");                //so all three is using the long and lat of NY
+        Place place2 = new Place("Berlin");
+        Place place3 = new Place("Paris");
+
+        //add the declared places into the Array List
+        threePlaces.add(place1);
+        threePlaces.add(place2);
+        threePlaces.add(place3);
 
         return threePlaces;
     }
@@ -155,15 +198,31 @@ public class Unit0Tests {
       // The HashMap should have key-value pairs of:
       // - key: `Alan Turing`, value: instance of Person with name `Alan Turing`
       // - key: `Grace Hopper`, value: instance of Person with name `Grace Hopper`
-      return null;
+
+        //Create Hash Map
+        HashMap<String,Person> people = new HashMap<String, Person>();
+
+        //Declare the people
+        Person alan = new Person ("Alan Turing");
+        Person grace = new Person ("Grace Hopper");
+
+        //add them to HashMap using "put" --- Array list add; HashMap put
+        people.put(alan.getName(), alan);
+        people.put(grace.getName(), grace);
+
+      return people;
     }
 
-    public static void changeTuringsCityToPrinceton(HashMap<String, Person> people) {
+    public static void changeTuringsCityToPrinceton(HashMap<String, Person> people)
+    {
+        if(people.containsKey("Alan Turing"))
+        {
+            people.get("Alan Turing").setCity("Princeton");
+            //people.get() will try to get the person from the created Hashmap people and setCity() will make the changes
+        }else{
+            //Do nothing
+        }
     }
-
-    HashMap<String, Person> people = new HashMap<String, Person>();
-    //that all I got
-
     // Bonus Problems
     public static void bonusPrintOutSumOfFirstTenFibonacciNumbers()
     {
